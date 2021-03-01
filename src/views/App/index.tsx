@@ -1,4 +1,5 @@
 import React from 'react';
+import FullscreenLoader from '../FullscreenLoader';
 const App = (): React.ReactElement => {
     const [ready, setReady] = React.useState<boolean>(false);
 
