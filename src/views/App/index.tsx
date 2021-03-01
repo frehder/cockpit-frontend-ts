@@ -9,6 +9,8 @@ import Footer from '../../components/Footer';
 import Legal from '../Legal';
 import Contact from '../Contact';
 import Homepage from '../Homepage';
+import Error from '../Error';
+
 const App = (): React.ReactElement => {
     const dispatch = useDispatch();
     const [ready, setReady] = React.useState<boolean>(false);
@@ -49,6 +51,10 @@ const App = (): React.ReactElement => {
                 <Route exact path="/datenschutz" render={(props) => <Legal block="privacy-policy" {...props} />} />
                 <Route exact path="/kontakt" component={Contact} />
                 <Route exact path="/" component={Homepage} />
+                <Route
+                    path="*"
+                    render={(props) => <Error headline="Fehler 404" text="Seite nicht gefunden." {...props} />}
+                />
             </Switch>
             <Footer />
         </Router>
