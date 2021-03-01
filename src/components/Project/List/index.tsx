@@ -2,6 +2,7 @@ import React from 'react';
 import * as Styled from './styles';
 import { TProjects } from '../../../store/projects/types';
 import { sortByPublishDate } from '../../../utils/project';
+import Special from '../Special';
 import Tile from '../Tile';
 
 interface IListProps {
@@ -24,6 +25,7 @@ const List = ({ header, projects }: IListProps): React.ReactElement => {
                 <Styled.Subline>{header.content}</Styled.Subline>
             </Styled.Header>
             <Styled.Tiles>
+                <Special />
                 {tiles}
             </Styled.Tiles>
         </Styled.Container>
