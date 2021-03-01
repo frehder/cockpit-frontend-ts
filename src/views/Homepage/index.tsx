@@ -6,6 +6,7 @@ import { selectBlock, selectStatus } from '../../store/homepage/selectors';
 import { selectProjects } from '../../store/projects/selectors';
 import FullscreenLoader from '../FullscreenLoader';
 import Hero from '../../components/Homepage/Hero';
+import Intro from '../../components/Homepage/Intro';
 import List from '../../components/Project/List';
 
 const Homepage = (): React.ReactElement => {
@@ -13,6 +14,7 @@ const Homepage = (): React.ReactElement => {
     const [ready, setReady] = React.useState<boolean>(false);
     const pageStatus = useSelector(selectStatus);
     const hero = useSelector(selectBlock('hero'));
+    const about = useSelector(selectBlock('about'));
     const portfolioHeader = useSelector(selectBlock('portfolio-header'));
     const projects = useSelector(selectProjects);
 
@@ -26,6 +28,7 @@ const Homepage = (): React.ReactElement => {
     return (
         <>
             <Hero headline={hero.headline} subline={hero.content} />
+            <Intro headline={about.headline} content={about.content} />
             {!!projects && <List header={portfolioHeader} projects={projects} />}
         </>
     );
