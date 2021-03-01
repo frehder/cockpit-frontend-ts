@@ -15,6 +15,8 @@ const App = (): React.ReactElement => {
         boot();
     }, []);
 
+    if (!ready) return <FullscreenLoader />;
+
     return (
     );
 };
