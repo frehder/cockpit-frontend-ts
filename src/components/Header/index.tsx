@@ -1,10 +1,23 @@
 import React from 'react';
+import * as Styled from './styles';
+import { TNavigationItems } from '../../types/navigation';
+import Logo from '../Logo';
+import Navigation from './Navigation';
 
-const Header = (): React.ReactElement => {
+interface IHeaderProps {
+    navigationItems: TNavigationItems;
+}
+
+const Header = ({ navigationItems }: IHeaderProps): React.ReactElement => {
     return (
-        <section>
-            <p>components/Header</p>
-        </section>
+        <Styled.Header>
+            <Styled.Brand>
+                <Logo linkTo={navigationItems.home.link} />
+            </Styled.Brand>
+            <Styled.Navigation>
+                <Navigation items={navigationItems} />
+            </Styled.Navigation>
+        </Styled.Header>
     );
 };
 
