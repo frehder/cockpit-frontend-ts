@@ -8,6 +8,7 @@ import { selectProject, selectStatus } from '../../store/projects/selectors';
 import Spinner from '../../components/Spinner';
 import Hero from '../../components/Project/Hero';
 import Info from '../../components/Project/Info';
+import Content from '../../components/Project/Content';
 
 const SingleProject = (): React.ReactElement => {
     const status = useSelector(selectStatus);
@@ -17,6 +18,8 @@ const SingleProject = (): React.ReactElement => {
         info_meta,
         info_text,
         info_feature_list,
+        project_content,
+        project_content_styles,
         header_headline,
         header_headline_color,
         header_background_color,
@@ -34,6 +37,7 @@ const SingleProject = (): React.ReactElement => {
                 image={header_image}
             />
             <Info headline={info_meta} content={info_text} features={info_feature_list} />
+            <Content content={project_content} styles={project_content_styles} />
         </Styled.Container>
     );
 };
