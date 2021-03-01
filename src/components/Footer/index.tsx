@@ -1,10 +1,10 @@
 import React from 'react';
+import * as Styled from './styles';
 
 const Footer = (): React.ReactElement => {
     return (
-        <section>
-            <p>components/Footer</p>
-        </section>
+        <Styled.Container>
+        </Styled.Container>
     );
 };
 
