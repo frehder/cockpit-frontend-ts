@@ -1,10 +1,21 @@
 import React from 'react';
+import * as Styled from './styles';
+import { IImage } from '../../../store/projects/types';
+import FeaturedImage from '../FeaturedImage';
 
-const Hero = (): React.ReactElement => {
+interface IHeroProps {
+    headline?: string;
+    colorscheme?: string;
+    bgcolor?: string;
+    image?: IImage;
+}
+
+const Hero = ({ headline = '', colorscheme = 'light', bgcolor = '', image }: IHeroProps): React.ReactElement => {
     return (
-        <section>
-            <p>components/Project/Hero</p>
-        </section>
+        <Styled.Container style={{ backgroundColor: bgcolor }}>
+            <Styled.Headline colorscheme={colorscheme}>{headline}</Styled.Headline>
+            <FeaturedImage img={image} alt={headline} />
+        </Styled.Container>
     );
 };
 
