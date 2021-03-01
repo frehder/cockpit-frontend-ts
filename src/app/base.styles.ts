@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import { Baguettebox } from '../vendor/baguettebox.styles';
 import { bp } from '../utils/styles';
 
 export const GlobalStyle = createGlobalStyle`
@@ -151,4 +152,6 @@ export const GlobalStyle = createGlobalStyle`
     figure {
         margin: 0;
     }
+
+    ${Baguettebox}
 `;
