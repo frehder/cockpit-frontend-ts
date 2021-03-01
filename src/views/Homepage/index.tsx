@@ -4,6 +4,7 @@ import { Status } from '../../types/store';
 import { getHomepage } from '../../store/homepage/slices';
 import { selectBlock, selectStatus } from '../../store/homepage/selectors';
 import { selectProjects } from '../../store/projects/selectors';
+import useTitle from '../../hooks/useTitle';
 import FullscreenLoader from '../FullscreenLoader';
 import Hero from '../../components/Homepage/Hero';
 import Intro from '../../components/Homepage/Intro';
@@ -25,6 +26,8 @@ const Homepage = (): React.ReactElement => {
         setReady(pageStatus === Status.LOADED);
         if (pageStatus !== Status.LOADED) dispatch(getHomepage);
     }, [pageStatus]);
+
+    useTitle();
 
     if (!ready) return <FullscreenLoader />;
 

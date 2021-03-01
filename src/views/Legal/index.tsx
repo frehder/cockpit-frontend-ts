@@ -1,5 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import useTitle from '../../hooks/useTitle';
 import { Status } from '../../types/store';
 import { selectBlock, selectStatus } from '../../store/legal/selectors';
 import { getLegal } from '../../store/legal/slices';
@@ -15,6 +16,8 @@ const Legal = ({ block }: ILegalProps): React.ReactElement => {
     const [ready, setReady] = React.useState<boolean>(false);
     const pageStatus = useSelector(selectStatus);
     const legal = useSelector(selectBlock(block));
+
+    useTitle(legal.headline);
 
     React.useEffect(() => {
         setReady(pageStatus === Status.LOADED);

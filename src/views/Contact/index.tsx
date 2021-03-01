@@ -1,8 +1,11 @@
 import React from 'react';
+import useTitle from '../../hooks/useTitle';
 import Hero from '../../components/Page/Hero';
 import Form from '../../components/Form';
 
 const Contact = (): React.ReactElement => {
+    useTitle('Kontakt');
+
     return (
         <>
             <Hero

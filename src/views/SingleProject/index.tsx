@@ -5,6 +5,7 @@ import { IUrlParams } from '../../types/router';
 import * as Styled from './styles';
 import { Status } from '../../types/store';
 import { selectProject, selectStatus } from '../../store/projects/selectors';
+import useTitle from '../../hooks/useTitle';
 import Spinner from '../../components/Spinner';
 import Hero from '../../components/Project/Hero';
 import Info from '../../components/Project/Info';
@@ -27,6 +28,8 @@ const SingleProject = (): React.ReactElement => {
     } = project;
 
     if (status !== Status.LOADED) return <Spinner />;
+
+    useTitle(header_headline);
 
     return (
         <Styled.Container>
