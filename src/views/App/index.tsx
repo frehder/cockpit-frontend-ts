@@ -5,7 +5,9 @@ import { getHomepage } from '../../store/homepage/slices';
 import { ExternalRoute, ScrollToTop } from '../../utils/router';
 import FullscreenLoader from '../FullscreenLoader';
 import Header from '../../components/Header';
+import Footer from '../../components/Footer';
 import Legal from '../Legal';
+import Contact from '../Contact';
 import Homepage from '../Homepage';
 const App = (): React.ReactElement => {
     const dispatch = useDispatch();
@@ -45,6 +47,7 @@ const App = (): React.ReactElement => {
                 />
                 <Route exact path="/impressum" render={(props) => <Legal block="imprint" {...props} />} />
                 <Route exact path="/datenschutz" render={(props) => <Legal block="privacy-policy" {...props} />} />
+                <Route exact path="/kontakt" component={Contact} />
                 <Route exact path="/" component={Homepage} />
             </Switch>
             <Footer />
