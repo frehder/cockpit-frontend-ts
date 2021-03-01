@@ -7,6 +7,7 @@ import { selectProjects } from '../../store/projects/selectors';
 import FullscreenLoader from '../FullscreenLoader';
 import Hero from '../../components/Homepage/Hero';
 import Intro from '../../components/Homepage/Intro';
+import Skillset from '../../components/Homepage/Skillset';
 import List from '../../components/Project/List';
 
 const Homepage = (): React.ReactElement => {
@@ -15,6 +16,8 @@ const Homepage = (): React.ReactElement => {
     const pageStatus = useSelector(selectStatus);
     const hero = useSelector(selectBlock('hero'));
     const about = useSelector(selectBlock('about'));
+    const skillsetDesign = useSelector(selectBlock('skillset-design'));
+    const skillsetDevelopment = useSelector(selectBlock('skillset-development'));
     const portfolioHeader = useSelector(selectBlock('portfolio-header'));
     const projects = useSelector(selectProjects);
 
@@ -29,6 +32,7 @@ const Homepage = (): React.ReactElement => {
         <>
             <Hero headline={hero.headline} subline={hero.content} />
             <Intro headline={about.headline} content={about.content} />
+            <Skillset design={skillsetDesign} development={skillsetDevelopment} />
             {!!projects && <List header={portfolioHeader} projects={projects} />}
         </>
     );
