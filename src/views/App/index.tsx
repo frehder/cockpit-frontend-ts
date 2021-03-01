@@ -1,6 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { getProjects } from '../../store/projects/slices';
 import { getHomepage } from '../../store/homepage/slices';
 import { ExternalRoute, ScrollToTop } from '../../utils/router';
 import FullscreenLoader from '../FullscreenLoader';
@@ -8,6 +9,7 @@ import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import Legal from '../Legal';
 import Contact from '../Contact';
+import SingleProject from '../SingleProject';
 import Homepage from '../Homepage';
 import Error from '../Error';
 
@@ -21,6 +23,7 @@ const App = (): React.ReactElement => {
 
     const boot = async () => {
         try {
+            dispatch(getProjects());
             dispatch(getHomepage());
         } catch (error) {
             console.error('app boot error:', error);
@@ -50,6 +53,8 @@ const App = (): React.ReactElement => {
                 <Route exact path="/impressum" render={(props) => <Legal block="imprint" {...props} />} />
                 <Route exact path="/datenschutz" render={(props) => <Legal block="privacy-policy" {...props} />} />
                 <Route exact path="/kontakt" component={Contact} />
+                <Route path="/portfolio/:projectSlug" component={SingleProject} />
+                <Route path="/portfolio" component={() => ExternalRoute('/')} />
                 <Route exact path="/" component={Homepage} />
                 <Route
                     path="*"
