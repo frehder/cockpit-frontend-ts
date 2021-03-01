@@ -1,6 +1,7 @@
 import React from 'react';
 import * as Styled from './styles';
 import { TProjects } from '../../../store/projects/types';
+import { sortByPublishDate } from '../../../utils/project';
 import Tile from '../Tile';
 
 interface IListProps {
@@ -13,6 +14,7 @@ interface IListProps {
 
 const List = ({ header, projects }: IListProps): React.ReactElement => {
     const entries = Object.entries(projects);
+    entries.sort(sortByPublishDate);
     const tiles = entries.map(([slug, project]) => <Tile key={slug} project={project} />);
 
     return (
