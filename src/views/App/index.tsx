@@ -39,6 +39,7 @@ const App = (): React.ReactElement => {
                 />
                 <Route exact path="/" component={Homepage} />
             </Switch>
+            <Footer />
         </Router>
     );
 };
