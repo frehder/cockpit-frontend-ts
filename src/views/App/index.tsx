@@ -1,9 +1,13 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { getHomepage } from '../../store/homepage/slices';
 import { ExternalRoute, ScrollToTop } from '../../utils/router';
 import FullscreenLoader from '../FullscreenLoader';
 import Header from '../../components/Header';
+import Homepage from '../Homepage';
 const App = (): React.ReactElement => {
+    const dispatch = useDispatch();
     const [ready, setReady] = React.useState<boolean>(false);
     const headerNavigationItems = {
         home: { link: '/', label: 'Home' },
@@ -12,6 +16,7 @@ const App = (): React.ReactElement => {
 
     const boot = async () => {
         try {
+            dispatch(getHomepage());
         } catch (error) {
             console.error('app boot error:', error);
         } finally {
