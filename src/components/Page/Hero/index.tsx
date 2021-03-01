@@ -1,10 +1,19 @@
 import React from 'react';
+import * as Styled from './styles';
 
-const Hero = (): React.ReactElement => {
+interface IHeroProps {
+    headline: string;
+    subline?: string;
+}
+
+const Hero = ({ headline, subline }: IHeroProps): React.ReactElement => {
     return (
-        <section>
-            <p>components/Page/Hero</p>
-        </section>
+        <Styled.Container>
+            <Styled.Wrapper>
+                <Styled.Headline>{headline}</Styled.Headline>
+                {!!subline && <Styled.Subline>{subline}</Styled.Subline>}
+            </Styled.Wrapper>
+        </Styled.Container>
     );
 };
 
