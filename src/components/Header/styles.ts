@@ -25,20 +25,3 @@ export const Brand = styled.div`
 `;
 
 export const Navigation = styled.div``;
-
-// TODO: remove grid stuff
-export const HeaderGrid = styled.header`
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    align-items: center;
-    max-width: var(--boundary);
-    margin: 0 auto;
-    padding: var(--space-regular) var(--grid-gap);
-    background-color: orange;
-`;
-
-export const BrandGrid = styled.div``;
-
-export const NavigationGrid = styled.div`
-    justify-self: end;
-`;
