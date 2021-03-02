@@ -15,6 +15,11 @@ const SingleProject = (): React.ReactElement => {
     const status = useSelector(selectStatus);
     const { projectSlug } = useParams<IUrlParams>();
     const project = useSelector(selectProject(projectSlug));
+
+    useTitle(project?.header_headline ? project.header_headline : '');
+
+    if (status !== Status.LOADED) return <Spinner />;
+
     const {
         info_meta,
         info_text,
@@ -26,10 +31,6 @@ const SingleProject = (): React.ReactElement => {
         header_background_color,
         header_image,
     } = project;
-
-    if (status !== Status.LOADED) return <Spinner />;
-
-    useTitle(header_headline);
 
     return (
         <Styled.Container>
