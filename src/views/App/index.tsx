@@ -53,6 +53,16 @@ const App = (): React.ReactElement => {
                 <Route exact path="/impressum" render={(props) => <Legal block="imprint" {...props} />} />
                 <Route exact path="/datenschutz" render={(props) => <Legal block="privacy-policy" {...props} />} />
                 <Route exact path="/kontakt" component={Contact} />
+                <Route
+                    exact
+                    path="/portfolio/website-mein-pferd"
+                    component={() => ExternalRoute('/portfolio/website-jtsv')}
+                />
+                <Route
+                    exact
+                    path="/portfolio/website-tennismagazin"
+                    component={() => ExternalRoute('/portfolio/website-jtsv')}
+                />
                 <Route path="/portfolio/:projectSlug" component={SingleProject} />
                 <Route path="/portfolio" component={() => ExternalRoute('/')} />
                 <Route exact path="/" component={Homepage} />
