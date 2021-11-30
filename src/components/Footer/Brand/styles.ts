@@ -5,6 +5,7 @@ export const Container = styled.section`
     text-align: center;
 
     svg {
+        margin: 0 auto;
         max-height: calc(var(--space-large));
     }
 
