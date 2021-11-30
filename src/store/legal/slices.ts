@@ -34,8 +34,7 @@ export const legalSlice = createSlice({
     initialState: legalInitialState,
     reducers: {},
     extraReducers: (builder) => {
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        builder.addCase(getLegal.pending, (state, action) => {
+        builder.addCase(getLegal.pending, (state, _action) => {
             return {
                 ...state,
                 status: Status.PENDING,
@@ -50,8 +49,7 @@ export const legalSlice = createSlice({
             };
         });
 
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        builder.addCase(getLegal.rejected, (state, action) => {
+        builder.addCase(getLegal.rejected, (state, _action) => {
             console.error('getLegal rejected');
             return {
                 ...state,

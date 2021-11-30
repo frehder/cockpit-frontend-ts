@@ -33,8 +33,7 @@ export const projectsSlice = createSlice({
     initialState: projectsInitialState,
     reducers: {},
     extraReducers: (builder) => {
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        builder.addCase(getProjects.pending, (state, action) => {
+        builder.addCase(getProjects.pending, (state, _action) => {
             return {
                 ...state,
                 status: Status.PENDING,
@@ -49,8 +48,7 @@ export const projectsSlice = createSlice({
             };
         });
 
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        builder.addCase(getProjects.rejected, (state, action) => {
+        builder.addCase(getProjects.rejected, (state, _action) => {
             console.error('getProjects rejected');
             return {
                 ...state,

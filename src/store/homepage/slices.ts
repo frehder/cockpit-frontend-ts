@@ -34,8 +34,7 @@ export const homepageSlice = createSlice({
     initialState: homepageInitialState,
     reducers: {},
     extraReducers: (builder) => {
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        builder.addCase(getHomepage.pending, (state, action) => {
+        builder.addCase(getHomepage.pending, (state, _action) => {
             return {
                 ...state,
                 status: Status.PENDING,
@@ -50,8 +49,7 @@ export const homepageSlice = createSlice({
             };
         });
 
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        builder.addCase(getHomepage.rejected, (state, action) => {
+        builder.addCase(getHomepage.rejected, (state, _action) => {
             console.error('getHomepage rejected');
             return {
                 ...state,

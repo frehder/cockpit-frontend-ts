@@ -24,8 +24,7 @@ const CallToAction = ({
 
     if (!headline || !text) return null;
 
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const handleButtonClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    const handleButtonClick = (_event: React.MouseEvent<HTMLButtonElement>) => {
         if (!button.link) return null;
         history.push(button.link);
     };

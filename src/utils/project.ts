@@ -2,10 +2,8 @@ import { TProjectEntries } from '../store/projects/types';
 import { TCompareFunction } from '../types/utils';
 
 export const sortByPublishDate = (
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    [slug1, data1]: TProjectEntries,
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    [slug2, data2]: TProjectEntries,
+    [_slug1, data1]: TProjectEntries,
+    [_slug2, data2]: TProjectEntries,
 ): TCompareFunction => {
     if (typeof data1 !== 'object' || typeof data2 !== 'object') return 0;
 

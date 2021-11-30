@@ -55,8 +55,7 @@ const Form = (): React.ReactElement => {
         }
     };
 
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const handleSubmit = async (event: React.MouseEvent<HTMLButtonElement>) => {
+    const handleSubmit = async (_event: React.MouseEvent<HTMLButtonElement>) => {
         const {
             data: { type, message, field },
         } = await request.post(
