@@ -4,8 +4,9 @@ import { bp } from '../../../utils/styles';
 export const Container = styled.main``;
 
 export const Header = styled.header`
-    padding: var(--space-medium) var(--grid-gap) var(--space-large);
+    padding: var(--space-small) var(--grid-gap) var(--space-medium);
 `;
+// padding: var(--space-medium) var(--grid-gap) var(--space-large);
 
 export const Headline = styled.h3`
     font-size: var(--font-size-headline-medium);

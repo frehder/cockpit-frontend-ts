@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import * as Styled from './styles';
 import { selectBlock } from '../../store/homepage/selectors';
-import CallToAction from '../CallToAction';
+// import CallToAction from '../CallToAction';
 import Brand from './Brand';
 import Social from './Social';
 import { ReactComponent as GithubIcon } from '../../assets/Github.svg';
@@ -16,11 +16,13 @@ const Footer = (): React.ReactElement => {
 
     return (
         <Styled.Container>
+    {/*
             <CallToAction
                 headline={cta.headline}
                 text={cta.content}
                 button={{ label: 'Kontakt aufnehmen', link: '/kontakt' }}
             />
+    */}
             <Brand headline={hero.headline} linkTo="/" />
             <Social
                 items={{

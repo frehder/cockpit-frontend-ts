@@ -11,6 +11,10 @@ import Intro from '../../components/Homepage/Intro';
 import Skillset from '../../components/Homepage/Skillset';
 import List from '../../components/Project/List';
 
+import Form from '../../components/Form';
+// import Special from '../../components/Project/Special';
+import * as Styled from '../../components/Project/List/styles';
+
 const Homepage = (): React.ReactElement => {
     const dispatch = useDispatch();
     const [ready, setReady] = React.useState<boolean>(false);
@@ -37,6 +41,12 @@ const Homepage = (): React.ReactElement => {
             <Intro headline={about.headline} content={about.content} />
             <Skillset design={skillsetDesign} development={skillsetDevelopment} />
             {!!projects && <List header={portfolioHeader} projects={projects} />}
+
+            <Styled.Header>
+                <Styled.Headline>Kontakt aufnehmen</Styled.Headline>
+                <Styled.Subline>Wenn Sie glauben ich kann Sie unterstützen, freue ich mich von Ihnen zu hören.</Styled.Subline>
+            </Styled.Header>
+            <Form />
         </>
     );
 };

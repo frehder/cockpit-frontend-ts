@@ -4,8 +4,9 @@ import { bp } from '../../utils/styles';
 export const Container = styled.section`
     max-width: var(--grid-6);
     margin: 0 auto;
-    padding: var(--space-large) var(--grid-gap);
+    padding: 0 var(--grid-gap) var(--space-large);
 `;
+// padding: var(--space-large) var(--grid-gap);
 
 export const Alert = styled.div<{ alertType: string }>`
     margin-bottom: var(--space-regular);

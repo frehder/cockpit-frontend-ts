@@ -18,7 +18,7 @@ const App = (): React.ReactElement => {
     const [ready, setReady] = React.useState<boolean>(false);
     const headerNavigationItems = {
         home: { link: '/', label: 'Home' },
-        contact: { link: '/kontakt', label: 'Kontakt' },
+        // contact: { link: '/kontakt', label: 'Kontakt' },
     };
 
     const boot = async () => {
@@ -44,14 +44,18 @@ const App = (): React.ReactElement => {
             <Header navigationItems={headerNavigationItems} />
             <Switch>
                 <Route path="/cv" component={() => ExternalRoute('https://cv.florianrehder.de')} />
+                {/*
                 <Route
                     path="/bachelorarbeit"
                     component={() =>
                         ExternalRoute('https://florianrehder.de/portfolio/bachelorarbeit-projekt-ortslinien')
                     }
                 />
+                */}
+                <Route path="/bachelorarbeit" component={() => ExternalRoute('/')} />
                 <Route exact path="/impressum" render={(props) => <Legal block="imprint" {...props} />} />
                 <Route exact path="/datenschutz" render={(props) => <Legal block="privacy-policy" {...props} />} />
+                {/*
                 <Route exact path="/kontakt" component={Contact} />
                 <Route
                     exact
@@ -65,6 +69,12 @@ const App = (): React.ReactElement => {
                 />
                 <Route path="/portfolio/:projectSlug" component={SingleProject} />
                 <Route path="/portfolio" component={() => ExternalRoute('/')} />
+                */}
+                <Route exact path="/kontakt" component={() => ExternalRoute('/')} />
+                <Route exact path="/portfolio/website-mein-pferd" component={() => ExternalRoute('/')} />
+                <Route exact path="/portfolio/website-tennismagazin" component={() => ExternalRoute('/')} />
+                <Route exact path="/portfolio/:projectSlug" component={() => ExternalRoute('/')} />
+                <Route exact path="/portfolio" component={() => ExternalRoute('/')} />
                 <Route exact path="/" component={Homepage} />
                 <Route
                     path="*"
