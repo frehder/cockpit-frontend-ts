@@ -12,10 +12,10 @@ export const Container = styled.section`
     }
 `;
 
-export const Card = styled.div`
+export const Card = styled.div<{ hasFeatures: boolean }>`
     display: flex;
     flex-direction: column;
-    max-width: var(--grid-10);
+    max-width: ${({ hasFeatures }) => (hasFeatures ? 'var(--grid-10)' : 'var(--grid-8)')};
     margin: 0 auto;
     padding: var(--space-regular);
     background-color: var(--color-lightest);
@@ -28,11 +28,11 @@ export const Card = styled.div`
     }
 `;
 
-export const Content = styled.div`
+export const Content = styled.div<{ hasFeatures: boolean }>`
     flex: 1 1 100%;
 
     @media ${bp()} {
-        flex-basis: 60%;
+        flex-basis: ${({ hasFeatures }) => (hasFeatures ? '60%' : '100%')};
         margin-right: calc(0.5 * var(--grid-gap));
     }
 `;
