@@ -19,7 +19,6 @@ const App = (): React.ReactElement => {
     const headerNavigationItems = {
         home: { link: '/', label: 'Home' },
         // contact: { link: '/kontakt', label: 'Kontakt' },
-        blog: { link: '/blog', label: 'Blog' },
     };
 
     const boot = async () => {
