@@ -19,6 +19,7 @@ const App = (): React.ReactElement => {
     const headerNavigationItems = {
         home: { link: '/', label: 'Home' },
         // contact: { link: '/kontakt', label: 'Kontakt' },
+        blog: { link: '/blog', label: 'Blog' },
     };
 
     const boot = async () => {
@@ -53,6 +54,7 @@ const App = (): React.ReactElement => {
                 />
                 */}
                 <Route path="/bachelorarbeit" component={() => ExternalRoute('/')} />
+                <Route path="/blog" component={() => ExternalRoute('https://blog.florianrehder.de')} />
                 <Route exact path="/impressum" render={(props) => <Legal block="imprint" {...props} />} />
                 <Route exact path="/datenschutz" render={(props) => <Legal block="privacy-policy" {...props} />} />
                 {/*
